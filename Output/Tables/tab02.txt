@@ -1,0 +1,13 @@
+ & \multicolumn{6}{c}{pga} \\
+mag\_cat&0-10&10-20&20-40&40-80&>80&Total \\
+&Mean area with09percentpeakpga&Mean area with09percentpeakpga&Mean area with09percentpeakpga&Mean area with09percentpeakpga&Mean area with09percentpeakpga&Mean area with09percentpeakpga \\
+\hline
+4.5&16&11&14&14&&15 \\
+4.5-5.5&149&63&30&31&22&100 \\
+5.5-6&332&78&63&34&41&180 \\
+6-6.5&544&106&89&74&44&234 \\
+6.5-7&714&237&237&150&81&316 \\
+7-7.5&542&31&609&352&117&439 \\
+7.5-8&2448&67&589&456&230&675 \\
+8&2798&99&423&396&128&556 \\
+Total&255&87&133&151&101&171 \\

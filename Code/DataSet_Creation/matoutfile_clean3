@@ -1,0 +1,344 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (maci64)
+                             February 23, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'smind'
+
+==========================================
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'year'
+    'month'
+    'day'
+    'hour'
+    'minute'
+    'latr'
+    'lonr'
+    'depthr'
+    'magr'
+    'time'
+    'latitude'
+    'longitude'
+    'depth'
+    'mag'
+    'magtype'
+    'nst'
+    'gap'
+    'dmin'
+    'rms'
+    'net'
+    'id'
+    'updated'
+    'place'
+    'type'
+    'horizontalerror'
+    'deptherror'
+    'magerror'
+    'magnst'
+    'status'
+    'locationsource'
+    'magsource'
+    'shakemap'
+    'second'
+    'eqid'
+
+==========================================
+Number of shakemaps assigned to eq 6710
+Number of shakemaps without eq 2022
+Number of shakemaps with error eq 58
+Number of shakemaps with multiple eq to figure out 0
+Same EQ to several Shakemaps 0
+EQ that should have ShakeMap but dont 126
+
+ans =
+
+        1999          10          16           9
+        2010           4           4          22
+
+
+ans =
+
+  2×1 cell array
+
+    '7km ENE of Running Springs, CA'
+    '12km SSW of Estacion Coahuila, B.C., MX'
+
+
+ans =
+
+   34.2400 -117.0400
+   32.0987 -115.0482
+
+DONE with Step3a!!!
+Elapsed time is 8.108014 seconds.
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'smind'
+    'eqid'
+
+==========================================
+DONE with Step3b!!!
+Elapsed time is 3.909715 seconds.
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'time'
+    'latitude'
+    'longitude'
+    'depth'
+    'mag'
+    'magtype'
+    'nst'
+    'gap'
+    'dmin'
+    'rms'
+    'net'
+    'id'
+    'updated'
+    'place'
+    'type'
+    'horizontalerror'
+    'deptherror'
+    'magerror'
+    'magnst'
+    'status'
+    'locationsource'
+    'magsource'
+    'shakemap'
+    'year'
+    'month'
+    'day'
+    'hour'
+    'minute'
+    'second'
+    'latr'
+    'lonr'
+    'depthr'
+    'magr'
+    'eqid'
+
+==========================================
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'I_D'
+    'FLAG_TSUNAMI'
+    'YEAR'
+    'MONTH'
+    'DAY'
+    'HOUR'
+    'MINUTE'
+    'SECOND'
+    'FOCAL_DEPTH'
+    'EQ_PRIMARY'
+    'EQ_MAG_MW'
+    'EQ_MAG_MS'
+    'EQ_MAG_MB'
+    'EQ_MAG_ML'
+    'EQ_MAG_MFA'
+    'EQ_MAG_UNK'
+    'INTENSITY'
+    'COUNTRY'
+    'STATE'
+    'LOCATION_NAME'
+    'LATITUDE'
+    'LONGITUDE'
+    'REGION_CODE'
+    'DEATHS'
+    'DEATHS_DESCRIPTION'
+    'MISSING'
+    'MISSING_DESCRIPTION'
+    'INJURIES'
+    'INJURIES_DESCRIPTION'
+    'DAMAGE_MILLIONS_DOLLARS'
+    'DAMAGE_DESCRIPTION'
+    'HOUSES_DESTROYED'
+    'HOUSES_DESTROYED_DESCRIPTION'
+    'HOUSES_DAMAGED'
+    'HOUSES_DAMAGED_DESCRIPTION'
+    'TOTAL_DEATHS'
+    'TOTAL_DEATHS_DESCRIPTION'
+    'TOTAL_MISSING'
+    'TOTAL_MISSING_DESCRIPTION'
+    'TOTAL_INJURIES'
+    'TOTAL_INJURIES_DESCRIPTION'
+    'TOTAL_DAMAGE_MILLIONS_DOLLARS'
+    'TOTAL_DAMAGE_DESCRIPTION'
+    'TOTAL_HOUSES_DESTROYED'
+    'TOTAL_HOUSES_DESTROYED_DESCRIPTION'
+    'TOTAL_HOUSES_DAMAGED'
+    'TOTAL_HOUSES_DAMAGED_DESCRIPTION'
+
+==========================================
+
+ans =
+
+    0.2302
+
+
+ans =
+
+    0.4604
+
+
+ans =
+
+    0.6906
+
+
+ans =
+
+    0.9208
+
+Number of assigned Impact events: 1978
+Number of Impact events without match: 194
+Number of Impact events with multiple matches: 0
+Number of Duplicates (same eq to several imp): 0
+DONE with Step3c!!!
+Elapsed time is 4.504547 seconds.
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'I_D'
+    'FLAG_TSUNAMI'
+    'YEAR'
+    'MONTH'
+    'DAY'
+    'HOUR'
+    'MINUTE'
+    'SECOND'
+    'FOCAL_DEPTH'
+    'EQ_PRIMARY'
+    'EQ_MAG_MW'
+    'EQ_MAG_MS'
+    'EQ_MAG_MB'
+    'EQ_MAG_ML'
+    'EQ_MAG_MFA'
+    'EQ_MAG_UNK'
+    'INTENSITY'
+    'COUNTRY'
+    'STATE'
+    'LOCATION_NAME'
+    'LATITUDE'
+    'LONGITUDE'
+    'REGION_CODE'
+    'DEATHS'
+    'DEATHS_DESCRIPTION'
+    'MISSING'
+    'MISSING_DESCRIPTION'
+    'INJURIES'
+    'INJURIES_DESCRIPTION'
+    'DAMAGE_MILLIONS_DOLLARS'
+    'DAMAGE_DESCRIPTION'
+    'HOUSES_DESTROYED'
+    'HOUSES_DESTROYED_DESCRIPTION'
+    'HOUSES_DAMAGED'
+    'HOUSES_DAMAGED_DESCRIPTION'
+    'TOTAL_DEATHS'
+    'TOTAL_DEATHS_DESCRIPTION'
+    'TOTAL_MISSING'
+    'TOTAL_MISSING_DESCRIPTION'
+    'TOTAL_INJURIES'
+    'TOTAL_INJURIES_DESCRIPTION'
+    'TOTAL_DAMAGE_MILLIONS_DOLLARS'
+    'TOTAL_DAMAGE_DESCRIPTION'
+    'TOTAL_HOUSES_DESTROYED'
+    'TOTAL_HOUSES_DESTROYED_DESCRIPTION'
+    'TOTAL_HOUSES_DAMAGED'
+    'TOTAL_HOUSES_DAMAGED_DESCRIPTION'
+
+==========================================
+Number of assigned Impact events: 1978
+Number of Impact events with Shakemap but no EQlist: 20
+Number of Impact events with issue Shakemaps but no EQlist: 0
+Number of Impact events without match: 174
+Number of Duplicates: 0
+DONE with Step3d!!!
+Elapsed time is 3.787910 seconds.
+ 
+==========================================
+IMPORTED VARIABLES
+ 
+    'I_D'
+    'FLAG_TSUNAMI'
+    'YEAR'
+    'MONTH'
+    'DAY'
+    'HOUR'
+    'MINUTE'
+    'SECOND'
+    'FOCAL_DEPTH'
+    'EQ_PRIMARY'
+    'EQ_MAG_MW'
+    'EQ_MAG_MS'
+    'EQ_MAG_MB'
+    'EQ_MAG_ML'
+    'EQ_MAG_MFA'
+    'EQ_MAG_UNK'
+    'INTENSITY'
+    'COUNTRY'
+    'STATE'
+    'LOCATION_NAME'
+    'LATITUDE'
+    'LONGITUDE'
+    'REGION_CODE'
+    'DEATHS'
+    'DEATHS_DESCRIPTION'
+    'MISSING'
+    'MISSING_DESCRIPTION'
+    'INJURIES'
+    'INJURIES_DESCRIPTION'
+    'DAMAGE_MILLIONS_DOLLARS'
+    'DAMAGE_DESCRIPTION'
+    'HOUSES_DESTROYED'
+    'HOUSES_DESTROYED_DESCRIPTION'
+    'HOUSES_DAMAGED'
+    'HOUSES_DAMAGED_DESCRIPTION'
+    'TOTAL_DEATHS'
+    'TOTAL_DEATHS_DESCRIPTION'
+    'TOTAL_MISSING'
+    'TOTAL_MISSING_DESCRIPTION'
+    'TOTAL_INJURIES'
+    'TOTAL_INJURIES_DESCRIPTION'
+    'TOTAL_DAMAGE_MILLIONS_DOLLARS'
+    'TOTAL_DAMAGE_DESCRIPTION'
+    'TOTAL_HOUSES_DESTROYED'
+    'TOTAL_HOUSES_DESTROYED_DESCRIPTION'
+    'TOTAL_HOUSES_DAMAGED'
+    'TOTAL_HOUSES_DAMAGED_DESCRIPTION'
+
+==========================================
+
+ans =
+
+    15
+
+
+ans =
+
+    55
+
+
+ans =
+
+    14
+
+DONE with Step3e!!!
+Elapsed time is 8.688039 seconds.

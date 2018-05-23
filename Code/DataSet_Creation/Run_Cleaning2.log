@@ -1,0 +1,1111 @@
+
+  ___  ____  ____  ____  ____ (R)
+ /__    /   ____/   /   ____/
+___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
+  Statistics/Data Analysis            StataCorp
+                                      4905 Lakeway Drive
+     MP - Parallel Edition            College Station, Texas 77845 USA
+                                      800-STATA-PC        http://www.stata.com
+                                      979-696-4600        stata@stata.com
+                                      979-696-4601 (fax)
+
+31-user 2-core Stata network perpetual license:
+       Serial number:  501506227524
+         Licensed to:  Woodrow Wilson School
+                       Princeton University
+
+Notes:
+      1.  Stata is running in batch mode.
+      2.  Unicode is supported; see help unicode_advice.
+      3.  More than 2 billion observations are allowed; see help obs_advice.
+      4.  Maximum number of variables is set to 5000; see help set_maxvar.
+
+. do Run_Cleaning2.do 
+
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step2a_EarthquakeList_create
+
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Raw/ComCat"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Raw/ComCat
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/"
+
+. 
+. * Create Stata Data files
+. insheet using "withshakemap1960to2016allmag.csv", clear
+(22 vars, 5,524 obs)
+
+. gen shakemap=1
+
+. save "`path'withshakemap1960to2016allmag.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/withshakemap1960to2016allmag.dta saved
+
+. 
+. insheet using "1960to2000over5point5.csv", clear
+(22 vars, 16,558 obs)
+
+. save "`path'1960to2000over5point5.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/1960to2000over5point5.dta saved
+
+. 
+. insheet using "2001to2016over5point5.csv", clear
+(22 vars, 8,191 obs)
+
+. save "`path'2001to2016over5point5.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/2001to2016over5point5.dta saved
+
+. 
+. insheet using "5point21_t_5point4999_1960to2016.csv", clear
+(22 vars, 13,751 obs)
+
+. save "`path'5point21_t_5point4999_1960to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/5point21_t_5point4999_1960to2016.dta s
+> aved
+
+. 
+. insheet using "5point11_t_5point2099_1960to2016.csv", clear
+(22 vars, 9,994 obs)
+
+. save "`path'5point11_t_5point2099_1960to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/5point11_t_5point2099_1960to2016.dta s
+> aved
+
+. 
+. insheet using "5point01_t_5point1099_1960to2016.csv", clear
+(22 vars, 12,237 obs)
+
+. save "`path'5point01_t_5point1099_1960to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/5point01_t_5point1099_1960to2016.dta s
+> aved
+
+. 
+. insheet using "4point91_t_5point0099_1960to2016.csv", clear
+(22 vars, 15,279 obs)
+
+. save "`path'4point91_t_5point0099_1960to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point91_t_5point0099_1960to2016.dta s
+> aved
+
+. 
+. insheet using "4point81_t_4point9099_1960to2016.csv", clear
+(22 vars, 19,601 obs)
+
+. save "`path'4point81_t_4point9099_1960to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point81_t_4point9099_1960to2016.dta s
+> aved
+
+. 
+. insheet using "4point71_t_4point8099_1960to2000.csv", clear
+(22 vars, 13,349 obs)
+
+. save "`path'4point71_t_4point8099_1960to2000.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point71_t_4point8099_1960to2000.dta s
+> aved
+
+. insheet using "4point71_t_4point8099_2001to2016.csv", clear
+(22 vars, 12,307 obs)
+
+. save "`path'4point71_t_4point8099_2001to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point71_t_4point8099_2001to2016.dta s
+> aved
+
+. insheet using "4point61_t_4point7099_2001to2016.csv", clear
+(22 vars, 15,961 obs)
+
+. save "`path'4point61_t_4point7099_2001to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point61_t_4point7099_2001to2016.dta s
+> aved
+
+. insheet using "4point51_t_4point6099_2001to2016.csv", clear
+(22 vars, 19,951 obs)
+
+. save "`path'4point51_t_4point6099_2001to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point51_t_4point6099_2001to2016.dta s
+> aved
+
+. insheet using "4point61_t_4point7099_1960to2000.csv", clear
+(22 vars, 14,525 obs)
+
+. save "`path'4point61_t_4point7099_1960to2000.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point61_t_4point7099_1960to2000.dta s
+> aved
+
+. insheet using "4point51_t_4point6099_1960to2000.csv", clear
+(22 vars, 14,669 obs)
+
+. save "`path'4point51_t_4point6099_1960to2000.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point51_t_4point6099_1960to2000.dta s
+> aved
+
+. insheet using "4point5_t_4point5099_1960to2004.csv", clear
+(22 vars, 18,745 obs)
+
+. save "`path'4point5_t_4point5099_1960to2004.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point5_t_4point5099_1960to2004.dta sa
+> ved
+
+. insheet using "4point5_t_4point5099_2005to2016.csv", clear
+(22 vars, 18,221 obs)
+
+. save "`path'4point5_t_4point5099_2005to2016.dta", replace
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/4point5_t_4point5099_2005to2016.dta sa
+> ved
+
+. 
+. *combine files
+. use "`path'2001to2016over5point5.dta", clear
+
+. append using "`path'1960to2000over5point5.dta",
+(note: variable net was str8, now str9 to accommodate using data's values)
+(note: variable type was str10, now str17 to accommodate using data's values)
+
+. append using "`path'5point21_t_5point4999_1960to2016.dta"
+(note: variable magtype was str3, now str5 to accommodate using data's values)
+
+. append using "`path'5point11_t_5point2099_1960to2016.dta"
+
+. append using "`path'5point01_t_5point1099_1960to2016.dta"
+
+. append using "`path'4point91_t_5point0099_1960to2016.dta"
+(note: variable place was str73, now str83 to accommodate using data's values)
+
+. append using "`path'4point81_t_4point9099_1960to2016.dta"
+(note: variable place was str83, now str84 to accommodate using data's values)
+
+. 
+. append using "`path'4point71_t_4point8099_1960to2000.dta"
+
+. append using "`path'4point71_t_4point8099_2001to2016.dta"
+
+. append using "`path'4point61_t_4point7099_2001to2016.dta"
+(note: variable locationsource was str6, now str7 to accommodate using data's values)
+
+. append using "`path'4point51_t_4point6099_2001to2016.dta"
+(note: variable place was str84, now str85 to accommodate using data's values)
+
+. append using "`path'4point61_t_4point7099_1960to2000.dta"
+
+. append using "`path'4point51_t_4point6099_1960to2000.dta"
+
+. append using "`path'4point5_t_4point5099_1960to2004.dta"
+
+. append using "`path'4point5_t_4point5099_2005to2016.dta"
+
+. 
+. merge 1:1 time latitude longitude mag depth id using "`path'withshakemap1960to2016allmag.dta"
+(note: variable magtype was str5, now str7 to accommodate using data's values)
+(note: variable type was str17, now str22 to accommodate using data's values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       222,417
+        from master                   220,116  (_merge==1)
+        from using                      2,301  (_merge==2)
+
+    matched                             3,223  (_merge==3)
+    -----------------------------------------
+
+. 
+. *codebook time
+. gen year=substr(time,1,4)
+
+. gen month=substr(time,6,2)
+
+. gen day=substr(time,9,2)
+
+. gen hour=substr(time,12,2)
+
+. gen minute=substr(time,15,2)
+
+. gen second=substr(time,18,6)
+
+. 
+. destring year, replace
+year: all characters numeric; replaced as int
+
+. destring month, replace
+month: all characters numeric; replaced as byte
+
+. destring day, replace
+day: all characters numeric; replaced as byte
+
+. destring hour, replace
+hour: all characters numeric; replaced as byte
+
+. destring minute, replace
+minute: all characters numeric; replaced as byte
+
+. destring second, replace
+second: all characters numeric; replaced as double
+
+. 
+. drop _merge
+
+. replace shakemap=0 if shakemap==.
+(220,116 real changes made)
+
+. 
+. drop if year==2016 & month>10
+(211 observations deleted)
+
+. 
+. *codebook time id
+. duplicates tag time, gen(tagtime)
+
+Duplicates in terms of time
+
+. *br if tagtime>0
+. 
+. *Identified duplicates
+. drop if id=="gcmtc021694d" | id=="nc72307731" | id=="ci9966449" | id=="gcmtb041799a" | id=="at00o7cs70" | id=="nc21207275"
+(6 observations deleted)
+
+. 
+. 
+. * Figure out duplicate ids
+. gen gcmt=1 if locationsource=="gcmt"
+(225,227 missing values generated)
+
+. sort year month day hour minute second
+
+. bysort year month day hour minute: egen hasgcmt=max(gcmt)
+(225153 missing values generated)
+
+. bysort year month day hour minute: gen number=_N
+
+. bysort year month day hour minute: gen distance2=sqrt((lat[2]-lat[1])^2+(lon[2]-lon[1])^2) if _n==2
+(223,646 missing values generated)
+
+. bysort year month day hour minute: gen seconddiff2=abs(second[2]-second[1])  if _n==2
+(223,646 missing values generated)
+
+. bysort year month day hour minute: egen distance=max(distance2)
+(221848 missing values generated)
+
+. bysort year month day hour minute: egen seconddiff=max(seconddiff2)
+(221848 missing values generated)
+
+. 
+. *codebook number
+. *codebook distance if number==2
+. *br id time mag latitude longitude status shakemap if hasgcmt==1 & seconddiff<=1.5 & number==2 & distance<3
+. 
+. drop if seconddiff<=1 & number==2 & distance<3 & gcmt==1
+(33 observations deleted)
+
+. drop secondd* distance* gcmt hasgcmt number
+
+. 
+. gen latr=round(lat,0.25)
+
+. gen lonr=round(lon,1)
+
+. gen depthr=round(depth, 25)
+
+. gen magr=round(mag,0.1)
+
+. 
+. duplicates tag year month day hour minute latr lonr depthr magr, gen(tagtimeloc)
+
+Duplicates in terms of year month day hour minute latr lonr depthr magr
+
+. *codebook tagtimeloc
+. *br if tagtimeloc>0
+. 
+. bysort year month day hour minute latr lonr depthr magr: gen vardup=_n
+
+. 
+. *To make them unique adjust depthr
+. replace depthr=-1 if vardup==1 & tagtimeloc==1
+(18 real changes made)
+
+. replace depthr=-2 if vardup==2 & tagtimeloc==1
+(18 real changes made)
+
+. drop vardup tagtime*
+
+. 
+. gen eqid=_n
+
+. 
+. *br if year==2015 & month==11 & day==24
+. 
+. save "`path'earthquakelist_withshakemap_orover4point5.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/earthquakelist_withshakemap_oro
+> ver4point5.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/earthquakelist_withshakemap_orover4poi
+> nt5.dta saved
+
+. outsheet using "`path'earthquakelist_withshakemap_orover4point5.csv", comma replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ComCat/earthquakelist_withshakemap_oro
+> ver4point5.csv not found)
+
+. count
+  225,390
+
+. 
+end of do-file
+
+. 
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step2b_ShakeMapListCleaning
+
+. set more off
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/"
+
+. 
+. insheet using "`path'TempEQListFiles/ShakeMap_List.csv", clear
+(29 vars, 25,609 obs)
+
+. 
+. gen smarea=smncols*smxdim*smnrows*smydim
+
+. drop if smyear==2016 & smmonth>10
+(139 observations deleted)
+
+. sort smminute
+
+. *br if smyear==2010 & smmonth==4 & smday==4 & smhour==22
+. 
+. drop if kick_out==1
+(4,133 observations deleted)
+
+. 
+. * DROP because no such event in earthquake list
+. drop if smind==12223
+(1 observation deleted)
+
+. *Manually confirmed duplicate
+. drop if smind==10103 | smind==10058 | smind==24726 |smind==11674 | smind==1431
+(4 observations deleted)
+
+. drop if smind==15060 | smind==15231 | smind==13159 | smind==12425 | smind==12474
+(4 observations deleted)
+
+. drop if smind==248 | smind==249 | smind==250 | smind==17719 | smind==17717 | smind==1887
+(6 observations deleted)
+
+. drop if smind==1947 | smind==9819 | smind==10743 | smind==15424 | smind==16874 | smind==2109
+(3 observations deleted)
+
+. drop if smind==1878 | smind==2593 | smind==2592 | smind==2594 | smind==13692 | smind==11705
+(6 observations deleted)
+
+. drop if smind==2113 | smind==2124 | smind==2125 | smind==2141 | smind==15351 | smind==2399
+(6 observations deleted)
+
+. drop if smind==2634 | smind==2635 | smind==21482 | smind==17902 | smind==10026 | smind==10177
+(6 observations deleted)
+
+. drop if smind==81 | smind==13023 | smind==1365 |smind==11557 | smind==3124 | smind==1420
+(6 observations deleted)
+
+. 
+. foreach smindval in 22272 11081 20269 19517 11839 2522 11289 15233 15305 15314 15419 15455 13895 12715 13899 15497 1842 1894 
+> 3274 1978 15849 17201 12448 2523 17202 {
+  2. drop if smind==`smindval'
+  3. }
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+(1 observation deleted)
+
+. 
+. * has mag belo 4.5 in earthquake list
+. drop if smind==12641 | smind==13501 | smind==107 | smind==16639 | smind==14230 | smind==12317 | smind==15959
+(7 observations deleted)
+
+. *doesnt exist in eq list
+. drop if smind==16136 | smind==13485 | smind==13504 | smind==13508 | smind==13518 | smind==13533
+(6 observations deleted)
+
+. drop if smind==13548 | smind==13550 | smind==13562 | smind==13570 | smind==13571
+(5 observations deleted)
+
+. drop if smind==21460
+(1 observation deleted)
+
+. *can not be clearly assigned
+. drop if smind==16173 | smind==13540 | smind==13541 | smind==11828 | smind==11829
+(5 observations deleted)
+
+. *************************************
+. * 1) UNIQUE ID
+. **************************************
+. *codebook smid
+. 
+. *drop if smpeakpga==0
+. 
+. 
+. *table smcode_version, c(mean smtimestamp)
+. gen smcode=substr(smcode_version,5,4)
+(3,444 missing values generated)
+
+. destring smcode, replace force
+smcode: contains nonnumeric characters; replaced as int
+(9174 missing values generated)
+
+. *table smcode
+. replace smcode=1 if smcode_version=="3.1" | smcode_version=="3.1 beta" | smcode_version=="3.1 GSM beta" | smcode_version=="3.
+> 1.1 GSM"
+(641 real changes made)
+
+. replace smcode=2 if smcode_version=="3.2" | smcode_version=="3.2.1 GSM"
+(5,653 real changes made)
+
+. replace smcode=. if smcode_version=="3.5" | smcode_version=="3.5.unknown revision" | smcode_version=="3.5."
+(0 real changes made)
+
+. *table smcode
+. *codebook smcode
+. 
+. *1.1) kick out  shakemaps before 1960
+. drop if smyear<1960
+(2 observations deleted)
+
+. *codebook smid
+. 
+. 
+. *1.2) kick out duplicate files
+. sort smid smversion smtimestamp smind
+
+. bysort smid smversion smtimestamp: gen uniqueFile=_n
+
+. keep if uniqueFile==1
+(3,958 observations deleted)
+
+. *codebook smid
+. 
+. *1.3) Same ID by version number and timestamp
+. gsort +smid +smyear +smmonth +smday -smversion -smtimestamp
+
+. bysort smid smyear smmonth smday: gen order_by_version=_n
+
+. gsort +smid +smyear +smmonth +smday -smtimestamp -smversion
+
+. bysort smid smyear smmonth smday: gen order_by_timestamp=_n
+
+. drop if order_by_version>1 & order_by_timestamp>1
+(307 observations deleted)
+
+. *codebook smid
+. 
+. *1.4) Same ID Solve duplicate id weirdos of version 1.1
+. duplicates tag smid, gen(id_dup)
+
+Duplicates in terms of smid
+
+. *codebook id_dup
+. *codebook smversion if id_dup==1
+. gsort +smid +smyear +smmonth +smday -smtimestamp
+
+. bysort smid smyear smmonth smday: gen diff_timestamp=smtimestamp[1]-smtimestamp[2] if _n==2
+(16,977 missing values generated)
+
+. *codebook diff_timestamp if smversion>1.09 & smversion<1.11 & id_dup==1
+. drop if smversion>1.09 & smversion<1.11 & id_dup==1 & diff_timestamp>1000
+(0 observations deleted)
+
+. *codebook smid
+. 
+. *1.5) Fix last two weirdos with same ID
+. cap drop id_dup
+
+. duplicates tag smid, gen(id_dup)
+
+Duplicates in terms of smid
+
+. codebook id_dup
+
+-------------------------------------------------------------------------------------------------------------------------------
+id_dup                                                                                                              (unlabeled)
+-------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/16,979
+
+            tabulation:  Freq.  Value
+                        16,975  0
+                             4  1
+
+. 
+. *br smregion smid smversion smtimestamp smcode_version if id_dup==1
+. 
+. drop if smid=="b000ilip" & smcode_version=="3.5.unknown revision"
+(1 observation deleted)
+
+. drop if smid=="b000iv7t" & smcode_version=="3.5.unknown revision"
+(1 observation deleted)
+
+. keep sm*
+
+. 
+. *************************************
+. * 2) Almost unique ID issue
+. *id yyyymmddhhmm vs yyyymmddhhmmss
+. **************************************
+. 
+. gen datestr1=string(smyear)+string(smmonth,"%02.0f")+string(smday,"%02.0f")+string(smhour,"%02.0f")+string(smminute,"%02.0f")
+
+. gen datestr2=string(smyear)+string(smmonth,"%02.0f")+string(smday,"%02.0f")+string(smhour,"%02.0f")+string(smminute,"%02.0f")
+> +string(smsecond,"%02.0f")
+
+. 
+. 
+. gen isdate1=(datestr1==smid)
+
+. gen isdate2=(datestr2==smid)
+
+. gen idformat=0
+
+. replace idformat=1 if datestr2==smid
+(4,788 real changes made)
+
+. replace idformat=-1 if datestr1==smid
+(2,538 real changes made)
+
+. 
+. bysort datestr1: egen date1exists=sum(isdate1)
+
+. bysort datestr1: egen date2exists=sum(isdate2)
+
+. bysort datestr1: gen number=_N
+
+. *codebook number date*
+. *ta date1exists date2exists
+. 
+. *define lat lon of date1 observation
+. gen date1lat=.
+(16,977 missing values generated)
+
+. gen date1lon=.
+(16,977 missing values generated)
+
+. replace date1lat=smlat if isdate1==1
+(2,538 real changes made)
+
+. replace date1lon=smlon if isdate1==1
+(2,538 real changes made)
+
+. 
+. *assign that to entire category yyyymmddhhmm
+. bysort datestr1: egen date1latcat=max(date1lat)
+(14379 missing values generated)
+
+. bysort datestr1: egen date1loncat=max(date1lon)
+(14379 missing values generated)
+
+. 
+. *calculate difference to that lat/lon
+. gen dist_lat=abs(date1latcat-smlat) if isdate1~=1
+(16,917 missing values generated)
+
+. gen dist_lon=abs(date1loncat-smlon) if isdate1~=1
+(16,917 missing values generated)
+
+. *codebook dist_lat dist_lon if date1loncat~=.
+. 
+. *calculate minimum distance in category
+. bysort datestr1: egen dist_latcat=min(dist_lat)
+(16857 missing values generated)
+
+. bysort datestr1: egen dist_loncat=min(dist_lon)
+(16857 missing values generated)
+
+. *codebook dist_latcat dist_loncat if date1loncat~=.
+. 
+. *2.1) Drop if long and short exist and not further than 1 degree away
+. drop if isdate1==1 & dist_latcat<1 & dist_loncat<1
+(60 observations deleted)
+
+. 
+. *codebook smid
+. 
+. 
+. **************************************************
+. *3) UNIQUE TIME and approximate location
+. **************************************************
+. 
+. *define location
+. gen latdegree=round(smlat,1)
+
+. gen londegree=round(smlon,1)
+
+. *codebook londegree
+. replace londegree=180 if londegree==-180
+(50 real changes made)
+
+. gen degreelocation=londegree*100+latdegree
+
+. 
+. *3.1) Manually identified duplicates with identical time and within 1degree
+. *Three of each are available, drop 2 oldest ones
+. drop if smid=="Northridge_zoom" || smid=="Northridge"
+(0 observations deleted)
+
+. drop if smid=="2009llbc" || smid=="2009llb2"
+(0 observations deleted)
+
+. drop if smid=="10168166" || smid=="2010zgap"
+(2 observations deleted)
+
+. drop if smid=="c0002lpg" || smid=="040811m"
+(0 observations deleted)
+
+. drop if smid=="082311a" || smid=="20110823175104"
+(0 observations deleted)
+
+. drop if smid=="c0005zdn" || smid=="092211b"
+(0 observations deleted)
+
+. drop if smid=="2012055_369378" || smid=="2012055_369384"
+(2 observations deleted)
+
+. drop if smid=="102912a" || smid=="b000dgim"
+(0 observations deleted)
+
+. drop if smid=="112012b" || smid=="c000dvxy"
+(0 observations deleted)
+
+. drop if smid=="022814c" || smid=="c000mr27"
+(0 observations deleted)
+
+. drop if smid=="00435746" || smid=="00437136"
+(2 observations deleted)
+
+. drop if smid=="060614a" || smid=="c000rb2u"
+(0 observations deleted)
+
+. drop if smid=="00469410" || smid=="uw60923777"
+(2 observations deleted)
+
+. drop if smid=="uw60942017" || smid=="usc000t9b4"
+(2 observations deleted)
+
+. drop if smid=="00475344" || smid=="usc000tbn8"
+(2 observations deleted)
+
+. drop if smid=="usc000tbul" || smid=="00475453"
+(2 observations deleted)
+
+. * Two of each
+. drop if smid=="197312012318"
+(0 observations deleted)
+
+. drop if smid=="17219"
+(1 observation deleted)
+
+. drop if smid=="2007czbv"
+(0 observations deleted)
+
+. drop if smid=="25865"
+(1 observation deleted)
+
+. drop if smid=="24501"
+(1 observation deleted)
+
+. drop if smid=="2009qhbb"
+(1 observation deleted)
+
+. drop if smid=="2010277_317915"
+(1 observation deleted)
+
+. drop if smid=="2011nabh"
+(1 observation deleted)
+
+. drop if smid=="2012fhbs"
+(1 observation deleted)
+
+. drop if smid=="30664"
+(1 observation deleted)
+
+. drop if smid=="00459506"
+(1 observation deleted)
+
+. drop if smid=="14486031"
+(1 observation deleted)
+
+. drop if smid=="c000swfq"
+(1 observation deleted)
+
+. drop if smid=="nn00475559"
+(1 observation deleted)
+
+. drop if smid=="usb000tq1c"
+(1 observation deleted)
+
+. drop if smid=="00506293"
+(1 observation deleted)
+
+. 
+. ****
+. *codebook smtime
+. duplicates tag smyear smmonth smday smhour smminute smsecond degreelocation, gen(timeloc_dup)
+
+Duplicates in terms of smyear smmonth smday smhour smminute smsecond degreelocation
+
+. *ta timeloc_dup
+. 
+. * 3.2) not in earthquake list and under magnitude 4.5
+. drop if timeloc_dup==11
+(12 observations deleted)
+
+. drop if timeloc_dup==7
+(8 observations deleted)
+
+. 
+. *3.3) Two at exact same time and same one degree, drop old if at least 300 days in between
+. gsort +smyear +smmonth +smday +smhour +smminute +smsecond +degreelocation -smtimestamp -smcode
+
+. bysort smyear smmonth smday smhour smminute smsecond degreelocation: gen diff_timestamp =smtimestamp[1]-smtimestamp[2] if _n=
+> =2
+(16,756 missing values generated)
+
+. bysort smyear smmonth smday smhour smminute smsecond degreelocation: gen diff_code=smcode[1]-smcode[2] if _n==2
+(16,810 missing values generated)
+
+. *codebook diff_time diff_code if timeloc_dup==1
+. drop if diff_timestamp>300 & diff_timestamp~=. & timeloc_dup==1 & diff_timestamp~=.
+(0 observations deleted)
+
+. 
+. *3.4) Two at exact same time and same one degree, later and later code stays
+. drop if diff_timestamp>0 & diff_timestamp~=. & diff_code>0 & diff_code~=. & timeloc_dup==1
+(24 observations deleted)
+
+. 
+. 
+. *3.5) At exact same time
+. duplicates tag smyear smmonth smday smhour smminute smsecond, gen(time_dup)
+
+Duplicates in terms of smyear smmonth smday smhour smminute smsecond
+
+. ta time_dup
+
+   time_dup |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     16,659       98.90       98.90
+          1 |        186        1.10      100.00
+------------+-----------------------------------
+      Total |     16,845      100.00
+
+. gsort +smyear +smmonth +smday +smhour +smminute +smsecond -smtimestamp
+
+. *define distance for second location
+. bysort smyear smmonth smday smhour smminute smsecond: gen dist2=sqrt((smlat[1]-smlat[2])^2+(smlon[1]-smlon[2])^2) if _n==2 & 
+> time_dup==1
+(16,752 missing values generated)
+
+. *assign distance to both locations
+. bysort smyear smmonth smday smhour smminute smsecond: egen dist=max(dist2) if time_dup==1
+(16659 missing values generated)
+
+. *codebook dist if time_dup==1
+. *all close to each other
+. 
+. *3.5a) as 3.3 without location
+. cap drop diff*
+
+. gsort +smyear +smmonth +smday +smhour +smminute +smsecond -smtimestamp -smcode
+
+. bysort smyear smmonth smday smhour smminute smsecond : gen diff_timestamp =smtimestamp[1]-smtimestamp[2] if _n==2
+(16,752 missing values generated)
+
+. bysort smyear smmonth smday smhour smminute smsecond : gen diff_code=smcode[1]-smcode[2] if _n==2
+(16,810 missing values generated)
+
+. drop if diff_timestamp>300 & diff_timestamp~=. & time_dup==1
+(0 observations deleted)
+
+. 
+. *3.5b) by creation of timestamp
+. drop if diff_timestamp>0 & diff_timestamp~=.
+(91 observations deleted)
+
+. 
+. cap drop time_dup
+
+. duplicates tag smyear smmonth smday smhour smminute smsecond, gen(time_dup)
+
+Duplicates in terms of smyear smmonth smday smhour smminute smsecond
+
+. ta time_dup
+
+   time_dup |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     16,750       99.98       99.98
+          1 |          4        0.02      100.00
+------------+-----------------------------------
+      Total |     16,754      100.00
+
+. 
+. *3.5c) same timestamp, different code
+. drop if diff_timestamp==0 & diff_code>0 & diff_code~=. & time_dup==1
+(2 observations deleted)
+
+. drop if diff_timestamp==. & diff_code>0 & diff_code~=. & time_dup==1
+(0 observations deleted)
+
+. 
+. cap drop time_dup
+
+. duplicates tag smyear smmonth smday smhour smminute smsecond, gen(time_dup)
+
+Duplicates in terms of smyear smmonth smday smhour smminute smsecond
+
+. ta time_dup
+
+   time_dup |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     16,752      100.00      100.00
+------------+-----------------------------------
+      Total |     16,752      100.00
+
+. 
+. keep sm*
+
+. 
+. ***************************************************
+. * UNIQUE Details
+. ***************************************************
+. 
+. *Manual identified as duplicates
+. drop if smid=="20080911002000" || smid=="20100304001851" || smid=="usc000tajk" || smid=="71086539"
+(4 observations deleted)
+
+. drop if smid=="14607868" || smid=="14517900" || smid=="14616188" || smid=="14618300" || smid=="10585525"
+(5 observations deleted)
+
+. drop if smid=="20060331011701" || smid=="kyae_06"
+(0 observations deleted)
+
+. 
+. 
+. gen latr=round(smlat,0.25)
+
+. gen lonr=round(smlon,1)
+
+. gen depthr=round(smdepth, 25)
+
+. gen magr=round(smmagnitude,0.1)
+
+. 
+. duplicates tag smyear smmonth smday smhour smminute latr lonr depthr magr, gen(tagtimeloc)
+
+Duplicates in terms of smyear smmonth smday smhour smminute latr lonr depthr magr
+
+. *codebook tagtimeloc
+. 
+. gsort smyear smmonth smday smhour smminute latr lonr depthr magr -smtimestamp -smcode
+
+. bysort smyear smmonth smday smhour smminute latr lonr depthr magr: gen diff_timestamp =smtimestamp[1]-smtimestamp[2] if _n==2
+(16,672 missing values generated)
+
+. bysort smyear smmonth smday smhour smminute latr lonr depthr magr: gen diff_code=smcode[1]-smcode[2] if _n==2
+(16,678 missing values generated)
+
+. *codebook diff_timestamp if tagtimeloc==1
+. drop if diff_timestamp>0 & diff_timestamp~=.
+(71 observations deleted)
+
+. 
+. cap drop tagtimeloc
+
+. duplicates tag smyear smmonth smday smhour smminute latr lonr depthr magr, gen(tagtimeloc)
+
+Duplicates in terms of smyear smmonth smday smhour smminute latr lonr depthr magr
+
+. *codebook tagtimeloc
+. 
+. *br if tagtimeloc==1
+. 
+. rename smyear year
+
+. rename smmonth month
+
+. rename smday day
+
+. rename smhour hour
+
+. rename smminute minute
+
+. 
+. save "`path'TempEQListFiles/TempListOfShakemaps.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/TempListOfShakemaps.dt
+> a not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/TempListOfShakemaps.dta saved
+
+. 
+. merge 1:1 year month day hour minute latr lonr depthr magr using "`path'ComCat/earthquakelist_withshakemap_orover4point5.dta"
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       226,298
+        from master                     8,790  (_merge==1)
+        from using                    217,508  (_merge==2)
+
+    matched                             7,882  (_merge==3)
+    -----------------------------------------
+
+. 
+. ta smcode_version _merge
+
+                     |        _merge
+      smcode_version | master on  matched ( |     Total
+---------------------+----------------------+----------
+                 3.1 |         8          0 |         8 
+        3.1 GSM beta |         4          1 |         5 
+            3.1 beta |       110          7 |       117 
+           3.1.1 GSM |       430         79 |       509 
+                 3.2 |     1,021         52 |     1,073 
+           3.2.1 GSM |     2,918      1,554 |     4,472 
+                 3.5 |     1,015        404 |     1,419 
+                3.5. |       154        230 |       384 
+            3.5.1223 |         4          5 |         9 
+            3.5.1233 |         9        203 |       212 
+            3.5.1246 |         1          1 |         2 
+            3.5.1266 |         6         18 |        24 
+            3.5.1277 |     2,259      1,976 |     4,235 
+            3.5.1329 |         7         32 |        39 
+            3.5.1356 |         0          8 |         8 
+            3.5.1359 |        31        167 |       198 
+            3.5.1381 |         0          5 |         5 
+            3.5.1384 |         0          8 |         8 
+            3.5.1387 |         0         83 |        83 
+            3.5.1394 |        25        209 |       234 
+            3.5.1397 |         0          1 |         1 
+            3.5.1407 |         5        186 |       191 
+            3.5.1413 |        14         52 |        66 
+            3.5.1426 |         0          1 |         1 
+            3.5.1432 |         0          1 |         1 
+            3.5.1435 |         0          8 |         8 
+            3.5.1440 |         0         11 |        11 
+            3.5.1446 |         1         27 |        28 
+            3.5.1452 |         0         28 |        28 
+            3.5.1459 |         0         20 |        20 
+            3.5.1463 |         0         12 |        12 
+            3.5.1470 |         2        223 |       225 
+            3.5.1486 |         3         53 |        56 
+            3.5.1492 |         0         47 |        47 
+            3.5.1496 |        10        171 |       181 
+            3.5.1508 |         3         59 |        62 
+            3.5.1521 |         2          7 |         9 
+            3.5.1524 |         3        141 |       144 
+            3.5.1530 |         5        173 |       178 
+            3.5.1543 |         6         27 |        33 
+            3.5.1547 |       332        211 |       543 
+            3.5.1556 |         0         55 |        55 
+            3.5.1573 |         2         58 |        60 
+            3.5.1579 |         3         80 |        83 
+            3.5.1586 |         4         82 |        86 
+             3.5.587 |         2         26 |        28 
+             3.5.623 |        63         35 |        98 
+             3.5.639 |        10         29 |        39 
+             3.5.653 |        40         63 |       103 
+             3.5.687 |        28         93 |       121 
+             3.5.704 |        16         55 |        71 
+             3.5.708 |        17        505 |       522 
+             3.5.951 |        95         93 |       188 
+3.5.unknown revision |       122        207 |       329 
+---------------------+----------------------+----------
+               Total |     8,790      7,882 |    16,672 
+
+
+. 
+. preserve
+
+. keep if _merge==3
+(226,298 observations deleted)
+
+. keep smind eqid
+
+. count
+  7,882
+
+. save "`path'TempEQListFiles/ShakeMap_AND_EARTHQUAKE_List_MATCH.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMap_AND_EARTHQUAK
+> E_List_MATCH.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMap_AND_EARTHQUAKE_List_
+> MATCH.dta saved
+
+. outsheet using "`path'TempEQListFiles/ShakeMap_AND_EARTHQUAKE_List_MATCH.csv", comma replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMap_AND_EARTHQUAK
+> E_List_MATCH.csv not found)
+
+. restore
+
+. 
+. preserve
+
+. keep if _merge==1
+(225,390 observations deleted)
+
+. keep smind
+
+. save "`path'TempEQListFiles/ShakeMaps_NOT_MATCHED.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMaps_NOT_MATCHED.
+> dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMaps_NOT_MATCHED.dta sav
+> ed
+
+. outsheet using "`path'TempEQListFiles/ShakeMaps_NOT_MATCHED.csv", comma replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/ShakeMaps_NOT_MATCHED.
+> csv not found)
+
+. count
+  8,790
+
+. restore
+
+. 
+. keep if _merge==2
+(16,672 observations deleted)
+
+. drop sm* _merge diff_timestamp  diff_code tagtimeloc
+
+. save "`path'TempEQListFiles/EARTHQUAKE_List_NOT_MATCHED.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/EARTHQUAKE_List_NOT_MA
+> TCHED.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/EARTHQUAKE_List_NOT_MATCHED.d
+> ta saved
+
+. outsheet using "`path'TempEQListFiles/EARTHQUAKE_List_NOT_MATCHED.csv", comma replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/EARTHQUAKE_List_NOT_MA
+> TCHED.csv not found)
+
+. count
+  217,508
+
+. 
+end of do-file
+
+. 
+end of do-file

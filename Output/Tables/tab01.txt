@@ -1,0 +1,6 @@
+ecinwater&Mean&Sd&Max&Mean&Sd&Max&Mean&Sd&Max \\
+&dist ec sc pga&dist ec sc pga&dist ec sc pga&dist ec sct pga&dist ec sct pga&dist ec sct pga&dist sc sct pga&dist sc sct pga&dist sc sct pga \\
+\midrule
+0 (45\%)&7&13&362&5&10&313&7&13&355 \\
+1 (54\%)&53&53&1022&59&54&682&25&33&445 \\
+Total (100\%)&32&46&1022&35&48&682&16&28&445 \\

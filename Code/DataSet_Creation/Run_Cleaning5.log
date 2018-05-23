@@ -1,0 +1,544 @@
+
+  ___  ____  ____  ____  ____ (R)
+ /__    /   ____/   /   ____/
+___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
+  Statistics/Data Analysis            StataCorp
+                                      4905 Lakeway Drive
+     MP - Parallel Edition            College Station, Texas 77845 USA
+                                      800-STATA-PC        http://www.stata.com
+                                      979-696-4600        stata@stata.com
+                                      979-696-4601 (fax)
+
+31-user 2-core Stata network perpetual license:
+       Serial number:  501506227524
+         Licensed to:  Woodrow Wilson School
+                       Princeton University
+
+Notes:
+      1.  Stata is running in batch mode.
+      2.  Unicode is supported; see help unicode_advice.
+      3.  More than 2 billion observations are allowed; see help obs_advice.
+      4.  Maximum number of variables is set to 5000; see help set_maxvar.
+
+. do Run_Cleaning5.do 
+
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step5a_CombineEQdataSets
+
+. set more off
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/"
+
+. 
+. *get smind <-> eq list indicator match
+. insheet using "`path'Built/TempEQListFiles/SM_EQ.csv", clear
+(2 vars, 14,592 obs)
+
+. 
+. *add smind indicator to eq list
+. merge 1:1 eqid using "`path'Built/ComCat/earthquakelist_withshakemap_orover4point5.dta"
+(note: variable eqid was long, now double to accommodate using data's values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       210,798
+        from master                         0  (_merge==1)
+        from using                    210,798  (_merge==2)
+
+    matched                            14,592  (_merge==3)
+    -----------------------------------------
+
+. drop _merge latr lonr depthr magr
+
+. 
+. ds
+smind         longitude     nst           net           type          magnst        shakemap      hour
+eqid          depth         gap           id            horizontal~r  status        year          minute
+time          mag           dmin          updated       deptherror    locationso~e  month         second
+latitude      magtype       rms           place         magerror      magsource     day
+
+. 
+. foreach var in `r(varlist)' {
+  2.         rename `var' eql`var'
+  3. }
+
+. 
+. rename eqleqid eqid
+
+. rename eqlsmind smind
+
+. 
+. *save combined file
+. save "`path'Built/TempEQListFiles/EQlist_with_smind.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/EQlist_with_smind.dta 
+> not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/EQlist_with_smind.dta saved
+
+. 
+. 
+. *Get and save impact data
+. insheet using "`path'Raw/NOAA/NOAA_Raw_CSV.csv", clear
+(47 vars, 2,172 obs)
+
+. gen id=_n
+
+. destring second, replace
+second: all characters numeric; replaced as double
+(137 missing values generated)
+
+. rename total_houses_destroyed_descripti total_houses_destoryed_des
+
+. rename total_houses_damaged_description total_houses_damaged_des
+
+. 
+. ds
+i_d           minute        eq_mag_mb     state         deaths_des~n  damage_des~n  total_deat~n  total_dama~n
+flag_tsunami  second        eq_mag_ml     location_n~e  missing       houses_des~d  total_miss~g  total_ho~yed
+year          focal_depth   eq_mag_mfa    latitude      missing_de~n  houses_des~n  total_miss~n  tota~yed_des
+month         eq_primary    eq_mag_unk    longitude     injuries      houses_dam~d  total_inju~s  total_ho~ged
+day           eq_mag_mw     intensity     region_code   injuries_d~n  houses_dam~n  total_inju~n  tota~ged_des
+hour          eq_mag_ms     country       deaths        damage_mil~s  total_deaths  total_dama~s  id
+
+. foreach var in `r(varlist)' {
+  2.         rename `var' imp`var'
+  3. }
+
+. 
+. save "`path'Built/TempEQListFiles/Impactraw.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/Impactraw.dta not foun
+> d)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/Impactraw.dta saved
+
+. 
+. 
+. *Get eqid <-> impact inicator match and save it
+. insheet using "`path'Built/TempEQListFiles/IMP_EQ.csv", clear
+(2 vars, 1,978 obs)
+
+. save "`path'Built/TempEQListFiles/IMP_EQ.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/IMP_EQ.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/IMP_EQ.dta saved
+
+. *Get sm <-> impact inicator match and save it
+. insheet using "`path'Built/TempEQListFiles/IMP_SM.csv", clear
+(2 vars, 20 obs)
+
+. save "`path'Built/TempEQListFiles/IMP_SM.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/IMP_SM.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/IMP_SM.dta saved
+
+. 
+. *Get raw shakemap data and save as stata
+. insheet using "`path'Built/TempEQListFiles/ShakeMap_List.csv", clear
+(29 vars, 25,609 obs)
+
+. save "`path'Built/TempEQListFiles/RawSM.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/RawSM.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/TempEQListFiles/RawSM.dta saved
+
+. 
+. *Combine Impact with all its indicators
+. use "`path'Built/TempEQListFiles/Impactraw.dta", clear
+
+. 
+. merge 1:1 impi_d using "`path'Built/TempEQListFiles/IMP_SM.dta", nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                         2,152
+        from master                     2,152  
+        from using                          0  
+
+    matched                                20  
+    -----------------------------------------
+
+. merge 1:1 impi_d using "`path'Built/TempEQListFiles/IMP_EQ.dta", nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                           194
+        from master                       194  
+        from using                          0  
+
+    matched                             1,978  
+    -----------------------------------------
+
+. 
+. replace eqid=-_n if eqid==.
+(194 real changes made)
+
+. 
+. codebook smind eqid
+
+-------------------------------------------------------------------------------------------------------------------------------
+smind                                                                                                               (unlabeled)
+-------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [496,25361]                  units:  1
+         unique values:  20                       missing .:  2,152/2,172
+
+                  mean:   9930.85
+              std. dev:   8054.24
+
+           percentiles:        10%       25%       50%       75%       90%
+                            1258.5    2479.5      8879     13552     24443
+
+-------------------------------------------------------------------------------------------------------------------------------
+eqid                                                                                                                (unlabeled)
+-------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (long)
+
+                 range:  [-2171,225351]               units:  1
+         unique values:  2,172                    missing .:  0/2,172
+
+                  mean:   86300.5
+              std. dev:   70131.6
+
+           percentiles:        10%       25%       50%       75%       90%
+                               411     13683     79395    145758    186570
+
+. 
+. merge 1:1 eqid using "`path'Built/TempEQListFiles/EQlist_with_smind.dta", update
+(note: variable eqid was long, now double to accommodate using data's values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       223,606
+        from master                       194  (_merge==1)
+        from using                    223,412  (_merge==2)
+
+    matched                             1,978
+        not updated                       447  (_merge==3)
+        missing updated                 1,531  (_merge==4)
+        nonmissing conflict                 0  (_merge==5)
+    -----------------------------------------
+
+. drop _merge
+
+. replace eqid=. if eqid<0
+(194 real changes made, 194 to missing)
+
+. count if smind~=.
+  14,612
+
+. 
+. replace smind=-_n if smind==.
+variable smind was int now long
+(210,972 real changes made)
+
+. 
+. merge 1:1 smind using "`path'Built/TempEQListFiles/RawSM.dta"
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       221,969
+        from master                   210,972  (_merge==1)
+        from using                     10,997  (_merge==2)
+
+    matched                            14,612  (_merge==3)
+    -----------------------------------------
+
+. drop if _merge==2
+(10,997 observations deleted)
+
+. drop _merge
+
+. 
+. replace smind=. if smind<0
+(210,972 real changes made, 210,972 to missing)
+
+. drop kick_out
+
+. 
+. gen magnitude=smmagnitude
+(210,972 missing values generated)
+
+. replace magnitude=eqlmag if magnitude==.
+(210,798 real changes made)
+
+. replace magnitude=impeq_primary if magnitude==.
+(144 real changes made)
+
+. drop if magnitude==.
+(30 observations deleted)
+
+. 
+. foreach var in year month day hour minute second lat lon{
+  2. gen `var'=sm`var'
+  3. replace `var'=eql`var' if `var'==.
+  4. replace `var'=imp`var' if `var'==.
+  5. }
+(210,942 missing values generated)
+(210,798 real changes made)
+(144 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(144 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(144 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(137 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(135 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(104 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(144 real changes made)
+(210,942 missing values generated)
+(210,798 real changes made)
+(144 real changes made)
+
+. 
+. *gen lat=smlat
+. *replace lat=eqlat if lat==.
+. *replace lat=imp`var' if lat==.
+. 
+. save "`path'Built/ThreeEQSets_combined.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ThreeEQSets_combined.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ThreeEQSets_combined.dta saved
+
+. 
+end of do-file
+
+. 
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step5b_PGAImport
+
+. set more off
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/"
+
+. 
+. 
+. insheet using "`path'ShakeMapPGA.csv", clear name
+(87 vars, 25,609 obs)
+
+. 
+. keep if kick_them==0
+(10,997 observations deleted)
+
+. drop kick_them
+
+. drop ec_tod_pga ec_ylat_pga ec_xlon_pga ec_country_pga
+
+. 
+. rename ec_value_pga ec_pga
+
+. rename sc_value_pga sc_pga
+
+. rename sctroid_value_pga sct_pga
+
+. rename sctroid_tod_pga sct_tod_pga
+
+. rename sctroid_country_pga sct_country_pga
+
+. rename sctroid_xlon_pga sct_xlon_pga
+
+. rename sctroid_ylat_pga sct_ylat_pga
+
+. rename dist_ec_sctroid_pga dist_ec_sct_pga
+
+. rename dist_sc_sctroid_pga dist_sc_sct_pga
+
+. 
+. label var peak_pga "Maximum PGA in %g"
+
+. label var ec_pga "PGA at epicenter"
+
+. label var sc_pga "PGA at shaking center"
+
+. label var sct_pga "PGA at shaking centroid"
+
+. label var sc_tod_pga "Time of Day at PGA shaking center"
+
+. label var sct_tod_pga "Time of Day at PGA shaking centroid"
+
+. label var sc_country_pga "Country of PGA shaking center"
+
+. label var sct_country_pga "Country of PGA shaking centroid"
+
+. label var dist_ec_sc_pga "Distance between epicenter and shaking center in km"
+
+. label var dist_ec_sct_pga "Distance between epicenter and shaking centroid in km"
+
+. label var dist_sc_sct_pga "Distance between shaking center and shaking centroid in km"
+
+. 
+. save "`path'PGA.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/PGA.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/PGA.dta saved
+
+. 
+end of do-file
+
+. 
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step5c_ShakeMapInfoImport
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/"
+
+. 
+. set more off
+
+. 
+. insheet using "`path'ShakeMapInfo.csv", clear
+(12 vars, 25,609 obs)
+
+. keep if kick_them==0
+(10,997 observations deleted)
+
+. drop kick_them
+
+. 
+. gen magnitude_1D=round(magnitude,0.1)
+
+. gen mag10=10^magnitude
+
+. 
+. label var mag10 "10^Magnitude"
+
+. label var magnitude "Magnitude"
+
+. label var magnitude_1D "Magnitude"
+
+. label var year "Year"
+
+. label var month "Month"
+
+. 
+. save "`path'ShakeMapInfo.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ShakeMapInfo.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ShakeMapInfo.dta saved
+
+. 
+end of do-file
+
+. 
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step5d_epicenterImport
+
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/"
+
+. 
+. set more off
+
+. 
+. insheet using "`path'ShakeMapPGA.csv", clear name
+(87 vars, 25,609 obs)
+
+. 
+. keep if kick_them==0
+(10,997 observations deleted)
+
+. drop kick_them
+
+. 
+. * Create Epicenter dataset
+. keep id ec_tod_pga ec_ylat_pga ec_xlon_pga ec_country_pga
+
+. 
+. rename ec_tod_pga ec_tod
+
+. rename ec_ylat_pga ec_ylat
+
+. rename ec_xlon_pga ec_xlon
+
+. 
+. label var ec_tod "Time of Day at Epicenter"
+
+. label var ec_ylat "Epicenter Latitude"
+
+. label var ec_xlon "Epicenter Longitude"
+
+. label var ec_country "Epicenter Country"
+
+. 
+. save "`path'epicenter.dta", replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/epicenter.dta not found)
+file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/epicenter.dta saved
+
+. 
+end of do-file
+
+. 
+. cd "/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation"
+/Users/slackner/Google Drive/Research/Publications/EQSurface/Code/DataSet_Creation
+
+. do Step5e_ReturnToMatlab
+
+. 
+. local path "/Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/"
+
+. 
+. use "`path'ThreeEQSets_combined.dta", clear
+
+. 
+. rename smid id
+
+. 
+. replace id=string(-_n) if id==""
+(210,942 real changes made)
+
+. 
+. codebook id
+
+-------------------------------------------------------------------------------------------------------------------------------
+id                                                                                                                  (unlabeled)
+-------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  string (str16), but longest is str14
+
+         unique values:  225,554                  missing "":  0/225,554
+
+              examples:  "-140596"
+                         "-181196"
+                         "-31948"
+                         "-72548"
+
+. 
+. merge 1:1 id using "`path'PGA.dta", nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       210,942
+        from master                   210,942  
+        from using                          0  
+
+    matched                            14,612  
+    -----------------------------------------
+
+. 
+. drop if year>=2016 & month>=11
+(12 observations deleted)
+
+. drop if eqid==. & smind==.
+(136 observations deleted)
+
+. 
+. keep smind year lat lon magnitude area_with09percentpeakpga area_with05percentpeakpga
+
+. 
+. outsheet using "`path'ForWorldMap.csv", comma replace
+(note: file /Users/slackner/Google Drive/Research/Publications/EQSurface/Data/Built/ForWorldMap.csv not found)
+
+. 
+end of do-file
+
+. 
+end of do-file
