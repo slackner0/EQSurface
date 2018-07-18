@@ -1,9 +1,9 @@
 # Earthquakes on the surface: earthquake location and area based on more than 14500 ShakeMaps
-Code and data details for my paper [Earthquakes on the surface: earthquake location and area based on more than 14500 ShakeMaps](https://doi.org/10.5194/nhess-2017-422).
+Code and data details for my paper [Earthquakes on the surface: earthquake location and area based on more than 14500 ShakeMaps](https://www.nat-hazards-earth-syst-sci.net/18/1665/2018/nhess-18-1665-2018.html).
 
 The paper as well as this repository are published under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). If you are using this repository for any purposes, please cite the paper. The suggested citation is:
 
-Lackner, S.: Earthquakes on the surface: earthquake location and area based on more than 14500 ShakeMaps, Nat. Hazards Earth Syst. Sci. Discuss., https://doi.org/10.5194/nhess-2017-422, in review, 2018.
+Lackner, S.: Earthquakes on the surface: earthquake location and area based on more than 14 500 ShakeMaps, Nat. Hazards Earth Syst. Sci., 18, 1665-1679, https://doi.org/10.5194/nhess-18-1665-2018, 2018. 
 
 ## Raw Data
 The raw data for this paper came from the following sources and is freely available. Since I do not own the data, I only provide links to the sources.
